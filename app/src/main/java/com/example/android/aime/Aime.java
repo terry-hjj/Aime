@@ -95,6 +95,15 @@ public class Aime extends InputMethodService implements KeyboardView.OnKeyboardA
         ic = getCurrentInputConnection();
         switch(primaryCode){
             case 10: // ENTER
+                if(input_text.length() > 0){
+                    // 按回车时, 若暂时输入内容不为空, 则直接把暂时输入内容上屏
+                    ic.commitText(input_text.trim(), 0);
+                    setCandidatesViewShown(false);
+                    input_text = "";
+                    mCandView.input_text.setText("");
+                    break;
+                }
+                // 按回车是, 若暂时输入内容为空, 则直接输入一个回车上屏
                 ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
                 break;
             case -1: // SHIFT
@@ -161,6 +170,18 @@ public class Aime extends InputMethodService implements KeyboardView.OnKeyboardA
                 isCn = !isCn;
                 break;
             default:
+                if(primaryCode == 32 && input_text.length() > 0){
+                    // 按空格时, 若暂时输入内容不为空, 则直接把暂时输入内容上屏
+                    ic.commitText(input_text.trim(), 0);
+                    setCandidatesViewShown(false);
+                    input_text = "";
+                    mCandView.input_text.setText("");
+                    break;
+                } else if (primaryCode == 32 && input_text.length() == 0){
+                    // 按空格时, 若暂时输入内容为空, 则直接把一个空格上屏
+                    ic.commitText(String.valueOf((char)primaryCode), 1);
+                    break;
+                }
                 db = dbHelper.getReadableDatabase();
                 if(isShift){ // 若按下shift, 则变大写
                     primaryCode = Character.toUpperCase(primaryCode);
