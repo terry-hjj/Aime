@@ -199,7 +199,7 @@ public class Aime extends InputMethodService implements KeyboardView.OnKeyboardA
 
                 // 清空后把本次查询结果放进候选词列表
                     suggestionList.clear();
-                    int i = 15;
+                    int i = MAX_CANDIDATE_LEN;
                     while(cursor.moveToNext() && i > 0){ // 中英文表字段不同
                         if(isCn) {
                             suggestionList.add(cursor.getString(cursor.getColumnIndex("word")) + "\n");
