@@ -2,13 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#a0a0a0">
 
     <TextView
         android:id="@+id/input_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#d0d0d0"/>
+        android:background="#ffffff"
+        android:textSize="20sp"/>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -18,58 +20,73 @@
         <Button
             android:id="@+id/bt_left"
             android:layout_width="30dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:text="&lt;"/>
 
         <TextView
             android:id="@+id/tv0"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="26dp"
             android:layout_weight="0.25"
+            android:gravity="center"
             android:textSize="12sp"
-            android:background="#e0e0e0"
-            android:layout_margin="2sp"/>
+            android:maxLines="1"
+            android:background="#ffffff"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"/>
 
         <TextView
             android:id="@+id/tv1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="26dp"
             android:layout_weight="0.25"
+            android:gravity="center"
             android:textSize="12sp"
-            android:background="#e0e0e0"
-            android:layout_margin="2sp"/>
+            android:maxLines="1"
+            android:background="#ffffff"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"/>
 
         <TextView
             android:id="@+id/tv2"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="26dp"
             android:layout_weight="0.25"
+            android:gravity="center"
             android:textSize="12sp"
-            android:background="#e0e0e0"
-            android:layout_margin="2sp"/>
+            android:maxLines="1"
+            android:background="#ffffff"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"/>
 
         <TextView
             android:id="@+id/tv3"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="26dp"
             android:layout_weight="0.25"
+            android:gravity="center"
             android:textSize="12sp"
-            android:background="#e0e0e0"
-            android:layout_margin="2sp"/>
+            android:maxLines="1"
+            android:background="#ffffff"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"/>
 
         <TextView
             android:id="@+id/tv4"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="26dp"
             android:layout_weight="0.25"
+            android:gravity="center"
             android:textSize="12sp"
-            android:background="#e0e0e0"
-            android:layout_margin="2sp"/>
+            android:maxLines="1"
+            android:background="#ffffff"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"/>
 
         <Button
             android:id="@+id/bt_right"
             android:layout_width="30dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:text="&gt;"/>
     </LinearLayout>
 </LinearLayout>

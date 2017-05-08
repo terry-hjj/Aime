@@ -107,7 +107,7 @@ public class Aime extends InputMethodService implements KeyboardView.OnKeyboardA
                 break;
             case -5: // DEL
                 // 若暂时输入区内还有内容, 则将其中最后一个字符删去
-                if(input_text.length() > 0){
+                if(input_text.length() > 1){ // 删去一个字符后,仍有内容
                     input_text = input_text.substring(0, input_text.length() - 1);
                     String low_input_text = input_text.toLowerCase(); // 转成小写, 再重新查询词库
                     Cursor cursor;
@@ -134,7 +134,12 @@ public class Aime extends InputMethodService implements KeyboardView.OnKeyboardA
                     mCandView.input_text.setText(input_text);
                     mCandView.setSuggestion(suggestionList);
                     setCandidatesViewShown(true);
-                }else {
+                }else if(input_text.length() == 1) { // 删去一个字符后, 暂时输入内容为空, 隐藏候选视图
+                    input_text = "";
+                    suggestionList.clear();
+                    mCandView.input_text.setText(input_text);
+                    setCandidatesViewShown(false);
+                } else {
                     ic.deleteSurroundingText(1, 0); // 暂时输入内容为空, 则直接删除屏幕上的一个字符
                 }
                 break;
