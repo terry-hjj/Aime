@@ -19,28 +19,28 @@
         <Key android:codes="44" android:keyLabel="," android:keyEdgeFlags="left"/>
         <Key android:codes="46" android:keyLabel="."/>
         <Key android:codes="63" android:keyLabel="\?"/>
-        <Key android:codes="-5" android:keyLabel="[Del]" android:keyEdgeFlags="right"/>
+        <Key android:codes="-5" android:keyLabel="Del" android:keyEdgeFlags="right"/>
     </Row>
 
     <Row>
         <Key android:codes="58" android:keyLabel=":" android:keyEdgeFlags="left"/>
         <Key android:codes="47" android:keyLabel="/"/>
         <Key android:codes="64" android:keyLabel="\@"/>
-        <Key android:codes="32" android:keyLabel="[Space]" android:keyEdgeFlags="right"/>
+        <Key android:codes="32" android:keyLabel="Space" android:keyEdgeFlags="right"/>
     </Row>
 
     <Row>
         <Key android:codes="34" android:keyLabel="&quot;" android:keyEdgeFlags="left"/>
         <Key android:codes="59" android:keyLabel=";"/>
         <Key android:codes="39" android:keyLabel="\'"/>
-        <Key android:codes="-123" android:keyLabel="[123]" android:keyEdgeFlags="right"/>
+        <Key android:codes="-123" android:keyLabel="123" android:keyEdgeFlags="right"/>
     </Row>
 
     <Row>
         <Key android:codes="40" android:keyLabel="(" android:keyEdgeFlags="left"/>
         <Key android:codes="41" android:keyLabel=")"/>
         <Key android:codes="38" android:keyLabel="&amp;"/>
-        <Key android:codes="-125" android:keyLabel="[Back]" android:keyEdgeFlags="right"/>
+        <Key android:codes="-125" android:keyLabel="Back" android:keyEdgeFlags="right"/>
     </Row>
 
     <Row>
