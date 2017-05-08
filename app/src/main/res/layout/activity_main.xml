@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/word"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Type sth here"/>
+    <Button
+        android:id="@+id/insert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="INSERT"/>
+    <Button
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SEARCH"/>
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="10"/>
+
+    <EditText
+        android:id="@+id/cn_word"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Type PinYing here"/>
+    <EditText
+        android:id="@+id/cn_zhongwen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="输入中文词"/>
+    <Button
+        android:id="@+id/cn_insert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CN_INSERT"/>
+    <Button
+        android:id="@+id/cn_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CN_SEARCH"/>
+    <TextView
+        android:id="@+id/cn_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="10"/>
+
+
+</LinearLayout>
