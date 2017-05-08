@@ -158,18 +158,40 @@ public class Aime extends InputMethodService implements KeyboardView.OnKeyboardA
                 mInputMethodManager.switchToNextInputMethod(getToken(), false);
                 break;
             case -123: // KEYBOARD_NUM_MODE
+                // 切换到数字小键盘时, 若暂时输入内容不为空, 则直接把暂时输入内容上屏
+                ic.commitText(input_text.trim(), 0);
+                setCandidatesViewShown(false);
+                input_text = "";
+                mCandView.input_text.setText("");
                 mKeyboardView.setKeyboard(mNumbersKeyboard); // 切换为数字小键盘
                 break;
             case -124: // KEYBOARD_CHAR_MODE
+                // 切换到符号小键盘时, 若暂时输入内容不为空, 则直接把暂时输入内容上屏
+                ic.commitText(input_text.trim(), 0);
+                setCandidatesViewShown(false);
+                input_text = "";
+                mCandView.input_text.setText("");
                 mKeyboardView.setKeyboard(mSymbolsKeyboard); // 切换为符号小键盘
                 break;
             case -125: // KEYBOARD_BACK_MODE : back to qwerty
+                // 切换回字母主键盘时, 若暂时输入内容不为空, 则直接把暂时输入内容上屏
+                ic.commitText(input_text.trim(), 0);
+                setCandidatesViewShown(false);
+                input_text = "";
+                mCandView.input_text.setText("");
                 mKeyboardView.setKeyboard(mQwertyKeyboard); // 切换回字母主键盘
                 break;
             case -126: // CN 中文输入
                 isCn = !isCn;
                 break;
             default:
+                if((mKeyboardView.getKeyboard() == mNumbersKeyboard)
+                        ||
+                   (mKeyboardView.getKeyboard() == mSymbolsKeyboard)){
+                    // 数字小键盘 或 符号小键盘的输入直接上屏, 不使用候选词视图
+                    ic.commitText(String.valueOf((char)primaryCode), 1);
+                    break;
+                }
                 if(primaryCode == 32 && input_text.length() > 0){
                     // 按空格时, 若暂时输入内容不为空, 则直接把暂时输入内容上屏
                     ic.commitText(input_text.trim(), 0);
