@@ -2,6 +2,7 @@ package com.example.android.aime;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
     public Context context; // 当前活动引用
 
+    public Button test; // 按此按钮转入测试各种输入框的页面
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         btcnInsert = (Button) findViewById(R.id.cn_insert);
         btcnSearch = (Button) findViewById(R.id.cn_search);
         tvcnResult = (TextView) findViewById(R.id.cn_result);
+
+        test = (Button) findViewById(R.id.test);
 
         // 插入新词到数据库的英文词库中去
         btInsert.setOnClickListener(new View.OnClickListener() {
@@ -112,6 +117,14 @@ public class MainActivity extends AppCompatActivity {
                 }
                 tvcnResult.setText(str);
                 cursor.close();
+            }
+        });
+
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { // 打开测试页面, 上有几种输入框
+                Intent intent = new Intent(MainActivity.this, TestActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -19,6 +19,7 @@ import android.support.annotation.Nullable;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
@@ -35,6 +36,8 @@ public class Aime extends InputMethodService implements KeyboardView.OnKeyboardA
     private Keyboard mQwertyKeyboard; // 字母键盘
     private Keyboard mSymbolsKeyboard; // 符号小键盘
     private Keyboard mNumbersKeyboard; // 数字小键盘
+
+
     private boolean isShift = false;  // 当前是否按下了shift
     private boolean isCn = false; // 当前是否中文输入
 
@@ -90,6 +93,25 @@ public class Aime extends InputMethodService implements KeyboardView.OnKeyboardA
         mCandView.setService(this); // 设置所依赖的IME对象
         return mCandView;
     }
+
+    @Override
+    public void onStartInputView(EditorInfo info, boolean restarting) {
+        super.onStartInputView(info, restarting);
+
+        // info参数的inputType属性中含有EditText的内容属性, 通过和TYPE_MASK_CLASS进行按位与操作得到
+        switch(info.inputType & EditorInfo.TYPE_MASK_CLASS){
+            case EditorInfo.TYPE_CLASS_NUMBER:
+            case EditorInfo.TYPE_CLASS_DATETIME:
+            case EditorInfo.TYPE_CLASS_PHONE:
+                mKeyboardView.setKeyboard(mNumbersKeyboard);
+                break;
+            case EditorInfo.TYPE_CLASS_TEXT:
+                mKeyboardView.setKeyboard(mQwertyKeyboard);
+                break;
+        }
+    }
+
+
 
     public void onKey(int primaryCode, int[] keyCodes){
         ic = getCurrentInputConnection();
