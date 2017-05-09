@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="TEXT PAGE -》"/>
+        android:text="TEST PAGE -》"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
         android:id="@+id/word"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Type sth here"/>
+        android:hint="Type English word here to insert into DB or search from DB"/>
     <Button
         android:id="@+id/insert"
         android:layout_width="match_parent"
@@ -42,12 +42,12 @@
         android:id="@+id/cn_word"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Type PinYing here"/>
+        android:hint="Type PinYing here to insert into DB or search from DB"/>
     <EditText
         android:id="@+id/cn_zhongwen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="输入中文词"/>
+        android:hint="输入与拼音相应的中文词以插入词库"/>
     <Button
         android:id="@+id/cn_insert"
         android:layout_width="match_parent"
