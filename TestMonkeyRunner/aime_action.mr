@@ -1,0 +1,63 @@
+WAIT|{'seconds':2,}
+TOUCH|{'x':530,'y':300,'type':'downAndUp',}
+TOUCH|{'x':100,'y':350,'type':'downAndUp',}
+TOUCH|{'x':100,'y':1550,'type':'downAndUp',}
+TOUCH|{'x':820,'y':1250,'type':'downAndUp',}
+TOUCH|{'x':540,'y':1700,'type':'downAndUp',}
+TOUCH|{'x':100,'y':1550,'type':'downAndUp',}
+TOUCH|{'x':540,'y':1700,'type':'downAndUp',}
+TOUCH|{'x':650,'y':1400,'type':'downAndUp',}
+TOUCH|{'x':100,'y':1400,'type':'downAndUp',}
+TOUCH|{'x':540,'y':1550,'type':'downAndUp',}
+TOUCH|{'x':270,'y':1250,'type':'downAndUp',}
+TOUCH|{'x':180,'y':1100,'type':'downAndUp',}
+TOUCH|{'x':540,'y':1700,'type':'downAndUp',}
+TOUCH|{'x':100,'y':1400,'type':'downAndUp',}
+TOUCH|{'x':540,'y':1700,'type':'downAndUp',}
+TOUCH|{'x':540,'y':1700,'type':'downAndUp',}
+TOUCH|{'x':320,'y':1400,'type':'downAndUp',}
+TOUCH|{'x':380,'y':1250,'type':'downAndUp',}
+TOUCH|{'x':270,'y':1250,'type':'downAndUp',}
+TOUCH|{'x':100,'y':1400,'type':'downAndUp',}
+TOUCH|{'x':870,'y':1550,'type':'downAndUp',}
+TOUCH|{'x':180,'y':1100,'type':'downAndUp',}
+
+
+# enter , switch to ZH
+TOUCH|{'x':980,'y':1700,'type':'downAndUp',}
+TOUCH|{'x':100,'y':1700,'type':'downAndUp',}
+
+# woyou <cw1>
+TOUCH|{'x':160,'y':1250,'type':'downAndUp',}
+TOUCH|{'x':930,'y':1250,'type':'downAndUp',}
+TOUCH|{'x':600,'y':1250,'type':'downAndUp',}
+TOUCH|{'x':930,'y':1250,'type':'downAndUp',}
+TOUCH|{'x':710,'y':1250,'type':'downAndUp',}
+TOUCH|{'x':180,'y':1100,'type':'downAndUp',}
+
+# yige <cw1>
+TOUCH|{'x':600,'y':1250,'type':'downAndUp',}
+TOUCH|{'x':820,'y':1250,'type':'downAndUp',}
+TOUCH|{'x':540,'y':1400,'type':'downAndUp',}
+TOUCH|{'x':270,'y':1250,'type':'downAndUp',}
+TOUCH|{'x':180,'y':1100,'type':'downAndUp',}
+
+# mengxiang <cw1>
+TOUCH|{'x':870,'y':1550,'type':'downAndUp',}
+TOUCH|{'x':270,'y':1250,'type':'downAndUp',}
+TOUCH|{'x':760,'y':1550,'type':'downAndUp',}
+TOUCH|{'x':540,'y':1400,'type':'downAndUp',}
+TOUCH|{'x':320,'y':1550,'type':'downAndUp',}
+TOUCH|{'x':820,'y':1250,'type':'downAndUp',}
+TOUCH|{'x':100,'y':1400,'type':'downAndUp',}
+TOUCH|{'x':760,'y':1550,'type':'downAndUp',}
+TOUCH|{'x':540,'y':1400,'type':'downAndUp',}
+TOUCH|{'x':180,'y':1100,'type':'downAndUp',}
+
+# switch to EN
+TOUCH|{'x':100,'y':1700,'type':'downAndUp',}
+
+
+
+#TOUCH|{'x':0,'y':0,'type':'downAndUp',}
+
