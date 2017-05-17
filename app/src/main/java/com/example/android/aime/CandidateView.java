@@ -84,7 +84,8 @@ public class CandidateView extends LinearLayout {
         btLeft.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                offset = offset > 0 ? offset - 1 : 0;
+                // offset = offset > 0 ? offset - 1 : 0; // 每次翻一格
+                offset = offset - 5 >= 0 ? offset - 5 : offset; // 每次翻5格
                 for(int i = 0; i < 5; i++){
                     if( offset + i < sugg_len ){
                         tv[i].setText(suggestion.get(offset + i).trim());
@@ -97,7 +98,8 @@ public class CandidateView extends LinearLayout {
         btRight.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                offset = offset + 4 < sugg_len - 1 ? offset + 1 : offset;
+                // offset = offset + 4 < sugg_len - 1 ? offset + 1 : offset; // 每次翻一格
+                offset = offset + 5 < sugg_len ? offset + 5 : offset; // 每次翻5格
                 for(int i = 0; i < 5; i++){
                     if( offset + i < sugg_len){
                         tv[i].setText(suggestion.get(offset + i).trim());

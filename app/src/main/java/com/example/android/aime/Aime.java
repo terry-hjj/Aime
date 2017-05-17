@@ -47,7 +47,7 @@ public class Aime extends InputMethodService implements KeyboardView.OnKeyboardA
     private List<String> suggestionList = new ArrayList<String>(); // 候选词列表
     private InputConnection ic; // 输入法连接,通过该连接将手选的字词上屏
 
-    private final int MAX_CANDIDATE_LEN = 100; // 限制最大候选词数量
+    private final int MAX_CANDIDATE_LEN = 200; // 限制最大候选词数量
 
 
     @Override

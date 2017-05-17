@@ -13,7 +13,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 public class MainActivity extends AppCompatActivity {
+    private final String DATABASE_PATH = "/data/data/com.example.android.aime/databases/";
+    private final String DATABASE_FILENAME = "ime.db";
 
     public EditText etWord; // 英文词输入
     public Button btInsert, btSearch; // 将输入的英文词插入数据库的按钮, 查询输入的英文词的按钮
@@ -34,6 +41,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // 初始化数据库文件
+        try{
+            createDatabase();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
 
         context = this;
 
@@ -130,6 +144,32 @@ public class MainActivity extends AppCompatActivity {
 
         // 初始化数据库帮助对象
         dbHelper = new MyDbHelper(this, "ime.db", null, 2);
+    }
 
+    public void createDatabase() throws IOException {
+        try{
+            // 数据库文件全路径
+            String databaseFilename = DATABASE_PATH + DATABASE_FILENAME;
+            File dir = new File(DATABASE_PATH);
+            // 不存在该路径则创建
+            if(! dir.exists()){
+                dir.mkdir();
+            }
+            // 不存在该数据库文件则从res/raw/下复制
+            if(! (new File(databaseFilename)).exists()){
+                FileOutputStream fos = new FileOutputStream(databaseFilename);
+                InputStream is = getResources().openRawResource(R.raw.ime);
+                byte[] buffer = new byte[4096];
+                int count = 0;
+                // 循环读取复制
+                while((count = is.read(buffer)) > 0){
+                    fos.write(buffer, 0, count);
+                }
+                fos.close();
+                is.close();
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }
